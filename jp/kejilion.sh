@@ -1801,7 +1801,7 @@ patch_wp_memory_limit() {
   local TARGET_DIR="/home/web/html"    # 路径写死
 
   find "$TARGET_DIR" -type f -name "wp-config.php" | while read -r FILE; do
-	# 古い定義を削除します
+	# 删除旧定义
 	sed -i "/define(['\"]WP_MEMORY_LIMIT['\"].*/d" "$FILE"
 	sed -i "/define(['\"]WP_MAX_MEMORY_LIMIT['\"].*/d" "$FILE"
 
@@ -5183,7 +5183,7 @@ optimize_high_performance() {
 	echo -e "${gl_lv}その他の最適化...${gl_bai}"
 	# レイテンシを減らすために、大きな透明なページを無効にします
 	echo never > /sys/kernel/mm/transparent_hugepage/enabled
-	# 禁用 NUMA balancing
+	# numaバランスを無効にします
 	sysctl -w kernel.numa_balancing=0 2>/dev/null
 
 
@@ -5473,7 +5473,7 @@ else
 	echo "${bianse}" >> ~/.profile
 	# source ~/.profile
 fi
-echo -e "${gl_lv}sshを再接続して変更を表示します！${gl_bai}"
+echo -e "${gl_lv}変更が完了します。 SSHを再接続して変更を表示します！${gl_bai}"
 
 hash -r
 break_end
@@ -5598,7 +5598,7 @@ linux_trash() {
 		fi
 		;;
 	  4)
-		read -e -p "リサイクルビンをクリアすることを確認しますか？ [Y/N]：" confirm
+		read -e -p "确认清空回收站？[y/n]: " confirm
 		if [[ "$confirm" == "y" ]]; then
 		  trash-empty
 		  echo "リサイクルビンがクリアされました。"
@@ -7644,7 +7644,7 @@ linux_ldnmp() {
 	  echo "Redisポート：6379"
 	  echo ""
 	  echo "ウェブサイトURL：https：//$yuming"
-	  echo "バックグラウンドログインパス： /admin"
+	  echo "バックエンドログインパス： /admin"
 	  echo "------------------------"
 	  echo "ユーザー名：admin"
 	  echo "パスワード：管理者"
@@ -12323,7 +12323,7 @@ while true; do
 	  echo -e "${gl_kjlan}バッチでタスクを実行します${gl_bai}"
 	  echo -e "${gl_kjlan}11. ${gl_bai}Tech Lionスクリプトをインストールします${gl_kjlan}12. ${gl_bai}システムを更新します${gl_kjlan}13. ${gl_bai}システムを掃除します"
 	  echo -e "${gl_kjlan}14. ${gl_bai}Dockerをインストールします${gl_kjlan}15. ${gl_bai}BBR3をインストールします${gl_kjlan}16. ${gl_bai}1G仮想メモリをセットアップします"
-	  echo -e "${gl_kjlan}17. ${gl_bai}タイムゾーンを上海に設定します${gl_kjlan}18. ${gl_bai}すべてのポートを開きます${gl_kjlan}51. ${gl_bai}カスタムコマンド"
+	  echo -e "${gl_kjlan}17. ${gl_bai}タイムゾーンを上海に設定します${gl_kjlan}18. ${gl_bai}すべてのポートを開きます${gl_kjlan}51. ${gl_bai}自定义指令"
 	  echo -e "${gl_kjlan}------------------------${gl_bai}"
 	  echo -e "${gl_kjlan}0.  ${gl_bai}メインメニューに戻ります"
 	  echo -e "${gl_kjlan}------------------------${gl_bai}"
@@ -12331,7 +12331,7 @@ while true; do
 
 	  case $sub_choice in
 		  1)
-			  send_stats "クラスターサーバーを追加します"
+			  send_stats "添加集群服务器"
 			  read -e -p "サーバー名：" server_name
 			  read -e -p "サーバーIP：" server_ip
 			  read -e -p "サーバーポート（22）：" server_port
@@ -12473,7 +12473,7 @@ while true; do
 	clear
 	echo "ログを更新します"
 	echo "------------------------"
-	echo "すべてのログ：${gh_proxy}raw.githubusercontent.com/kejilion/sh/main/kejilion_sh_log.txt"
+	echo "全部日志: ${gh_proxy}raw.githubusercontent.com/kejilion/sh/main/kejilion_sh_log.txt"
 	echo "------------------------"
 
 	curl -s ${gh_proxy}raw.githubusercontent.com/kejilion/sh/main/kejilion_sh_log.txt | tail -n 30
