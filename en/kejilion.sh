@@ -1556,7 +1556,7 @@ fi
 
 add_yuming() {
 	  ip_address
-	  echo -e "First resolve the domain name to the native IP:${gl_huang}$ipv4_address  $ipv6_address${gl_bai}"
+	  echo -e "First resolve the domain name to the local IP:${gl_huang}$ipv4_address  $ipv6_address${gl_bai}"
 	  read -e -p "Please enter your IP or the resolved domain name:" yuming
 }
 
@@ -5769,7 +5769,7 @@ list_connections() {
 # Add a new connection
 add_connection() {
 	send_stats "Add a new connection"
-	echo "Example to create a new connection:"
+	echo "Create a new connection example:"
 	echo "- Connection name: my_server"
 	echo "- IP address: 192.168.1.100"
 	echo "- Username: root"
@@ -8450,7 +8450,7 @@ linux_panel() {
 	  echo -e "${gl_kjlan}53.  ${gl_bai}llama3 chat AI model${gl_kjlan}54.  ${gl_bai}AMH Host Website Building Management Panel"
 	  echo -e "${gl_kjlan}55.  ${gl_bai}FRP intranet penetration (server side)${gl_huang}★${gl_bai}	         ${gl_kjlan}56.  ${gl_bai}FRP intranet penetration (client)${gl_huang}★${gl_bai}"
 	  echo -e "${gl_kjlan}57.  ${gl_bai}Deepseek chat AI big model${gl_kjlan}58.  ${gl_bai}Dify big model knowledge base${gl_huang}★${gl_bai}"
-	  echo -e "${gl_kjlan}59.  ${gl_bai}NewAPI Big Model Asset Management${gl_kjlan}60.  ${gl_bai}JumpServer open source bastion machine"
+	  echo -e "${gl_kjlan}59.  ${gl_bai}NewAPI big model asset management${gl_kjlan}60.  ${gl_bai}JumpServer open source bastion machine"
 	  echo -e "${gl_kjlan}------------------------"
 	  echo -e "${gl_kjlan}61.  ${gl_bai}Online translation server${gl_kjlan}62.  ${gl_bai}RAGFlow big model knowledge base"
 	  echo -e "${gl_kjlan}63.  ${gl_bai}OpenWebUI self-hosted AI platform${gl_huang}★${gl_bai}             ${gl_kjlan}64.  ${gl_bai}it-tools toolbox"
@@ -11483,7 +11483,7 @@ EOF
 								  (crontab -l ; echo "0 0 * * $weekday $newquest") | crontab - > /dev/null 2>&1
 								  ;;
 							  3)
-								  read -e -p "Choose when to perform tasks every day? (Hours, 0-23):" hour
+								  read -e -p "Choose what time to perform tasks every day? (Hours, 0-23):" hour
 								  (crontab -l ; echo "0 $hour * * * $newquest") | crontab - > /dev/null 2>&1
 								  ;;
 							  4)
@@ -11986,7 +11986,7 @@ EOF
 					  sed -i 's/^ENABLE_STATS="false"/ENABLE_STATS="true"/' /usr/local/bin/k
 					  sed -i 's/^ENABLE_STATS="false"/ENABLE_STATS="true"/' ~/kejilion.sh
 					  echo "Collection has been enabled"
-					  send_stats "Privacy and security have been enabled for collection"
+					  send_stats "Privacy and security collection has been enabled"
 					  ;;
 				  2)
 					  cd ~
